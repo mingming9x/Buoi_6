@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=divece-width, initial-scale1.0">
+        <title>Mật khẩu</title>
+    </head>
+    <body>
+         
+        <script>
+           
+                var password = window.prompt("Mật khẩu: ");
+                var soKyTu = /^.{6,}$/;
+                var so = /^(?=.*?[0-9])$/;
+                var vietHoa = /^([A-Z])$/;
+                var kyTuDB = /^(?=.*[@$!%*?&])/;
+                
+                var correct = /^[A-Z](?=.*[0-9])[a-zA-Z\d].{6,}$/;
+                
+                if (kyTuDB.test(password)) {alert("Sai cú pháp");}
+                else if (correct.test(password)) {
+                        alert("Đăng nhập thành công!");
+                }
+                else {
+                    if (!soKyTu.test(password)) {alert("Số kí tự tối thiểu là 6!");}
+                    if (!vietHoa.test(password)) {alert("Chữ cái đầu tiên bắt buộc viết hoa!");}
+                    if (!so.test(password)) {alert("Bắt buộc có chữ số!");}
+                }
+        </script>
+    </body>
+</html>

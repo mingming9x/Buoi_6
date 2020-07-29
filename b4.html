@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xoa phan tu thu n</title>
+</head>
+<body>
+
+    <script>
+        var n = + window.prompt("Nhập giá trị cho n: ");
+        var soNguyenDuong = [3, 29, 23, "24", 9, 63, "88", 2, 4];
+
+        var filtered = soNguyenDuong.filter(function(value, index, arr){
+            return value != arr[n-1];
+        });
+        if (0 < n && n <= soNguyenDuong.length) {
+            document.write(filtered);
+        }else document.write("Phần tử ko tồn tại");
+    </script>
+
+    <hr>
+
+    <script>
+        var n = + window.prompt("Nhập giá trị cho n: ");
+        var soNguyenDuong = [3, 29, 23, "24", 9, 63, "88", 2, 4];
+
+        function arrayRemove(arr, value) {
+            return arr.filter(function(ele){
+                return ele != value;
+            });
+        }
+        var result = arrayRemove(soNguyenDuong, soNguyenDuong[n-1]);
+        if (0 < n && n <= soNguyenDuong.length) {
+            document.write(result);
+        }else document.write("Phần tử ko tồn tại");
+    </script>
+
+    <hr>
+
+    <script>
+        var n = + window.prompt("Nhập giá trị cho n: ");
+        var soNguyenDuong = [3, 29, 23, "24", 9, 63, "88", 2, 4];  
+
+        delete soNguyenDuong[n-1];
+        if (0 < n && n <= soNguyenDuong.length) { 
+            document.write(soNguyenDuong);
+        }else document.write("Phần tử ko tồn tại"); 
+    </script>
+    
+</body>
+</html>
